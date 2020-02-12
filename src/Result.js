@@ -6,9 +6,8 @@ function Result(props) {
     <Box>
       <Media>
         <Media.Item>
-          <Content>
-            Você acertou{' '}
-            <strong data-resultado={props.result}>{props.result}</strong> de{' '}
+          <Content data-resultado={props.result}>
+            Você acertou <strong>{props.result}</strong> de{' '}
             <strong>{props.total}</strong> perguntas
           </Content>
         </Media.Item>

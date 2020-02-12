@@ -8,8 +8,13 @@ import Result from './Result';
 
 function App() {
   const [responses, setResponses] = useState({});
+  const responsesArray = Object.values(responses);
 
   const computeResponse = (questionIndex, answerId) => {
+    if (responses[questionIndex]) {
+      return null;
+    }
+
     setResponses({
       ...responses,
       [questionIndex]: {
@@ -21,7 +26,6 @@ function App() {
     });
   };
 
-  const responsesArray = Object.values(responses);
   const hasQuizEnded = initialQuestions.length === responsesArray.length;
   const countCorrectResponses = responsesArray.filter(
     value => value.isCorrectResponse
