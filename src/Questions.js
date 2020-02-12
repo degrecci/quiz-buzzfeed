@@ -1,21 +1,53 @@
 import React from 'react';
 import { Heading, Box, Button } from 'react-bulma-components';
-import questions from './questionsArray';
 
-function Questions() {
+import initialQuestions from './questionsArray';
+
+function Questions(props) {
+  const checkResponseColor = (answerId, response) => {
+    if (!response) {
+      return null;
+    }
+
+    if (answerId === response.correctResponse) {
+      return 'success';
+    }
+
+    if (answerId === response.responseId) {
+      return 'danger';
+    }
+  };
+
+  const checkResponse = index => {
+    if (!props.responses[index]) {
+      return null;
+    }
+    return props.responses[index].isCorrectResponse ? 'correta' : 'errada';
+  };
+
   return (
-    <div>
-      {questions.map(({ id, title, answers }) => (
-        <Box key={id}>
-          <Heading>{title}</Heading>
-          {answers.map((answer, index) => (
-            <Button key={index} fullwidth>
-              {answer}
-            </Button>
-          ))}
+    <>
+      {initialQuestions.map((question, index) => (
+        <Box key={index} data-test="pergunta">
+          <Heading>{question.title}</Heading>
+          <div data-resposta={checkResponse(index)}>
+            {question.answers.map(({ answerId, answer }) => (
+              <Button
+                color={checkResponseColor(answerId, props.responses[index])}
+                data-test="opcao"
+                key={answerId}
+                fullwidth
+                style={{ marginTop: '10px' }}
+                size="medium"
+                onClick={() => props.computeResponse(index, answerId)}
+              >
+                {answer}
+              </Button>
+            ))}
+          </div>
         </Box>
       ))}
-    </div>
+    </>
   );
 }
 

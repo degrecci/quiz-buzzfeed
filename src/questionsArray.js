@@ -1,17 +1,68 @@
 export default [
   {
-    id: 1,
     title: 'Qual é a capital da Argentina?',
-    answers: ['Mendonza', 'Buenos Aires', 'Bariloche', 'Ushuaia']
+    correctAnswerId: 2,
+    answers: [
+      {
+        answerId: 1,
+        answer: 'Mendonza'
+      },
+      {
+        answerId: 2,
+        answer: 'Buenos Aires'
+      },
+      {
+        answerId: 3,
+        answer: 'Bariloche'
+      },
+      {
+        answerId: 4,
+        answer: 'Ushuaia'
+      }
+    ]
   },
   {
-    id: 2,
     title: 'Qual é a capital da Bolivia?',
-    answers: ['Santa cruz', 'Sucre', 'La Paz', 'Cochabamba']
+    correctAnswerId: 2,
+    answers: [
+      {
+        answerId: 1,
+        answer: 'Santa cruz'
+      },
+      {
+        answerId: 2,
+        answer: 'Sucre'
+      },
+      {
+        answerId: 3,
+        answer: 'La Paz'
+      },
+      {
+        answerId: 4,
+        answer: 'Cochabamba'
+      }
+    ]
   },
   {
-    id: 3,
     title: 'Qual é a capital do Uruguai?',
-    answers: ['Punta del Este', 'Colônia do Sacramento', 'Salto', 'Montevideu']
+    correctAnswerId: 4,
+    answers: [
+      {
+        answerId: 1,
+        answer: 'Punta del Este'
+      },
+      {
+        answerId: 2,
+        answer: 'Colônia do Sacramento'
+      },
+      {
+        answerId: 3,
+        answer: 'Salto'
+      },
+      {
+        answerId: 4,
+        answer: 'Montevideu'
+      }
+    ]
   }
 ];
