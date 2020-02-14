@@ -28,9 +28,9 @@ function Questions(props) {
   return (
     <>
       {initialQuestions.map((question, index) => (
-        <Box key={index} data-test="pergunta">
+        <Box key={index}>
           <Heading>{question.title}</Heading>
-          <div data-resposta={checkResponse(index)}>
+          <div data-test="pergunta" data-resposta={checkResponse(index)}>
             {question.answers.map(({ answerId, answer }) => (
               <Button
                 color={checkResponseColor(answerId, props.responses[index])}

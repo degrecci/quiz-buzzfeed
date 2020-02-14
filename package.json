@@ -3,12 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "codenation-jest-score": "https://github.com/thecodenation/codenation-jest-score/tarball/master",
     "react": "^16.9.0",
     "react-bulma-components": "^2.3.0",
     "react-dom": "^16.9.0",
     "react-scripts": "3.1.1",
-    "styled-components": "^4.3.2",
-    "codenation-jest-score": "^1.0.2"
+    "styled-components": "^4.3.2"
   },
   "devDependencies": {
     "cross-env": "^6.0.3",
